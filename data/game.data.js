@@ -7,8 +7,8 @@ export const OFFER_STATUSES = {
 export const data = {
   // array for cells: cell = {x,y}
   settings: {
-    rowsCount: 5,
-    columnsCount: 5,
+    rowsCount: 3,
+    columnsCount: 3,
     pointsToWin: 10,
     maximumMisses: 3,
     decreaseDeltaInMs: 100,

@@ -1,8 +1,10 @@
 import { data } from "../data/game.data.js";
 import { Cell } from "./cell.component.js";
 
+import { ele } from "../helpers.js";
+
 export function Grid() {
-  const containerEle = document.createElement("table");
+  const containerEle = ele("table", "grid");
 
   for (let y = 0; y < data.settings.rowsCount; y++) {
     const row = document.createElement("tr");

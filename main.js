@@ -1,10 +1,13 @@
 import { Game } from "./ui/game.component.js";
 
+const app = document.getElementById("app");
+app.classList.add("main");
+
 function renderApp() {
-  document.body.innerHTML = "";
+  app.innerHTML = "";
 
   const gameEle = Game();
-  document.body.append(gameEle);
+  app.append(gameEle);
 }
 
 renderApp();

@@ -1,8 +1,9 @@
 import { OFFER_STATUSES, data } from "../data/game.data.js";
+import { ele } from "../helpers.js";
 
 export function Cell(x, y) {
-  const cellEle = document.createElement("td");
-  cellEle.append(x + "-" + y);
+  const cellEle = ele("td", "grid__cell");
+  // cellEle.append(x + "-" + y);
 
   if (x === data.coords.current.x && y === data.coords.current.y) {
     const offerEle = document.createElement("img");
