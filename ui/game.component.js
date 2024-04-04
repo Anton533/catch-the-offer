@@ -1,7 +1,8 @@
+import { ele } from "../helpers.js";
+
 import { Settings } from "./settings.component.js";
 import { Scores } from "./scores.component.js";
 import { Grid } from "./grid.component.js";
-import { ele } from "../helpers.js";
 
 export function Game() {
   const containerEle = ele("div", "game-wrapper");
