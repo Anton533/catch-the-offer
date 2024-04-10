@@ -18,6 +18,7 @@ export const data = {
     maximumMisses: 3,
     decreaseDeltaInMs: 100,
     isMuted: SWITCHING_SOUNDS.on,
+    selectedOptionIdx: GRID_SIZE[0],
   },
   offerStatus: OFFER_STATUSES.default,
   coords: {
@@ -95,6 +96,16 @@ export function catchOffer() {
   notify();
   clearInterval(stepIntervalId);
   runStepInterval();
+}
+
+export function updateGridSize(value) {
+  if (value === data.settings.rowsCount) return;
+  data.settings = {
+    ...data.settings,
+    rowsCount: value,
+    columnsCount: value,
+  };
+  notify();
 }
 
 function getRandom(n) {

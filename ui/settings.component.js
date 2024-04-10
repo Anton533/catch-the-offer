@@ -5,6 +5,8 @@ import {
   POINTS_TO_WIN,
   DECREASE_DELTA_IN_MS,
   MAX_MISSES,
+  updateGridSize,
+  data,
 } from "../data/game.data.js";
 
 export function Settings() {
@@ -15,10 +17,18 @@ export function Settings() {
   const gridSizeSelect = ele("select", "grid-size__select");
   gridSizeLabel.append("Grid size");
 
+  gridSizeSelect.addEventListener("change", function (e) {
+    const selectedEleValue = e.currentTarget.value;
+    updateGridSize(+selectedEleValue);
+  });
+
   GRID_SIZE.forEach((e) => {
     const gridSizeOption = ele("option", "grid-size__option");
-    gridSizeOption.value = `${e}`;
-    gridSizeOption.innerText = `${e}x${e}`;
+    gridSizeOption.value = e;
+    gridSizeOption.innerText = `${e} x ${e}`;
+    if (e === data.settings.rowsCount) {
+      gridSizeOption.selected = true;
+    }
     gridSizeSelect.append(gridSizeOption);
   });
 
